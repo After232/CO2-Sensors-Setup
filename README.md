@@ -56,7 +56,11 @@ Directly underneath, add these two lines:
 dtoverlay=i2c-gpio,bus=4,i2c_gpio_delay_us=1,i2c_gpio_sda=23,i2c_gpio_scl=24
 dtoverlay=i2c-gpio,bus=3,i2c_gpio_delay_us=1,i2c_gpio_sda=17,i2c_gpio_scl=27
 ```
-Once done
+Once done, press Control + X, then press Y, then press Enter. This will save and exit the config.txt.
+
+Run `sudo i2cdetect -l` again. You should now see two extra I2C buses in the list. They will be named `i2c-3` and `i2c-4` respectively. These are the new buses that have been added, and allow you to add more 
+
+
 
 
 
