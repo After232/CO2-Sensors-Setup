@@ -16,7 +16,8 @@ import cow
 * Interface Configuration
 * List of things to install via Terminal for setup
 * Configuring additional buses
-* 
+* VNC Server
+* Python code
 
 
 ## Interface Configuration
