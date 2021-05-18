@@ -4,7 +4,7 @@ Check
 
 ## Interface
 
-Check 2
+Check `pyton` 2
 
 ```
 import cow
