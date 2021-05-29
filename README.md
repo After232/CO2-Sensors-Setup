@@ -1,19 +1,8 @@
 # SCD30 on Raspberry Pi
-
 This is a guide to installing multiple Sensirion SCD30 air sensors onto a fresh Raspberry Pi 4.
-
-## Interface
-
-Check `pyton` 2
-
-```
-import cow
-```
-
 
 
 ## Contents:
-* Interface Configuration
 * List of things to install via Terminal for setup
 * Configuring additional buses
 * VNC Server
@@ -21,7 +10,18 @@ import cow
 * Connecting Sensors to Breadboard and Raspi
 
 
-## Interface Configuration
+## List of things to install via Terminal for setup
+Before you install anything, you need to set up the interfacing options on your Raspi. Go to the Raspberry Pi menu, d3 d3 d3, and select Interfacing Options. Enable SSH, I2C and Serial. You can also enable SPI and VNC (for remote access) if you want. Restart your Raspi after enabling all of these.
+
+Open a new Terminal window and enter all of the following lines of commands, in order and separately, to ensure that all the necessary packages are installed.
+
+```
+sudo apt-get update
+sudo apt-get install -y python-smbus
+sudo apt-get install -y i2c-tools
+python -m pip install pyserial
+python -m pip install scd30_i2c
+```
 
 
 ## Configuring additional buses
