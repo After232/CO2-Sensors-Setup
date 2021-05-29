@@ -65,9 +65,27 @@ Run `sudo i2cdetect -l` again. You should now see two extra I2C buses in the lis
 ## Connecting Sensors to Breadboard and Raspi
 This part will only work if the above has been done properly. Below are the SCD30's pin guide and the Raspi pin guide. For the breadboard, you only really need the power rails (+) and (-). 
 
-[SCD30 pin-out diagram specifications](https://www.sensirion.com/fileadmin/user_upload/customers/sensirion/Dokumente/9.5_CO2/Sensirion_CO2_Sensors_SCD30_Datasheet.pdf)
 ![SCD30 pin-out diagram](https://raw.githubusercontent.com/After232/co2-sensors-setup/main/Images/SCD30-pinout-diagram.png?token=AQJTUGMPVI6ENFGBSH4R733AWH72M)
 
+The pins that matter to us on the SCD30 are VDD, GND, SCL, SDA and SEL. The rest can be left unconnected. As we have three sensors, we can give each of them a label (such as Sensor A, Sensor B and Sensor C) to help differentiate between them.
+
+The pinout diagram for Raspi can be [found here](https://pinout.xyz/#).
+
+Make sure that the Raspi is **turned off** before any connections are made. This is to prevent short-circuit issues. Once everything is clear, do the following connections in order:
+1. Raspi pin 1 (3v3 power) to the anode (+) power rail of the breadboard.
+2. Raspi pin 6 (ground) to the cathode (-) power rail of the breadboard, adjacent to the previous connection.
+3. On Sensor A, connect VDD to the anode (+) power rail of the breadboard, parallel to the Raspi's 3v3 power connection.
+4. On Sensor A, connect GND to the cathode (-) power rail of the breadboard, adjacent to the previous connection.
+5. Repeat steps 3-4 for Sensor B and Sensor C.
+6. Connect Raspi pin 3 (GPIO 2) to SDA on Sensor A.
+7. Connect Raspi pin 5 (GPIO 3) to SCL on Sensor A.
+8. Connect Raspi pin 6 (ground) to SEL on Sensor A.
+6. Connect Raspi pin 11 (GPIO 17) to SDA on Sensor B.
+7. Connect Raspi pin 13 (GPIO 27) to SCL on Sensor B.
+8. Connect Raspi pin 14 (ground) to SEL on Sensor B.
+6. Connect Raspi pin 16 (GPIO 23) to SDA on Sensor C.
+7. Connect Raspi pin 18 (GPIO 24) to SCL on Sensor C.
+8. Connect Raspi pin 20 (ground) to SEL on Sensor C.
 
 
 
