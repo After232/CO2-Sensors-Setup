@@ -18,6 +18,7 @@ import cow
 * Configuring additional buses
 * VNC Server
 * Python code
+* Connecting Sensors to Breadboard and Raspi
 
 
 ## Interface Configuration
@@ -59,9 +60,13 @@ dtoverlay=i2c-gpio,bus=3,i2c_gpio_delay_us=1,i2c_gpio_sda=17,i2c_gpio_scl=27
 ```
 Once done, press Control + X, then press Y, then press Enter. This will save and exit the config.txt.
 
-Run `sudo i2cdetect -l` again. You should now see two extra I2C buses in the list. They will be named `i2c-3` and `i2c-4` respectively. These are the new buses that have been added, and allow you to add more 
+Run `sudo i2cdetect -l` again. You should now see two extra I2C buses in the list. They will be named `i2c-3` and `i2c-4` respectively. These are the new buses that have just been added and they will allow you to have multiple of the same sensor without conflicting addresses.
 
+## Connecting Sensors to Breadboard and Raspi
+This part will only work if the above has been done properly. Below are the SCD30's pin guide and the Raspi pin guide. For the breadboard, you only really need the power rails (+) and (-). 
 
+[SCD30 pin-out diagram specifications](https://www.sensirion.com/fileadmin/user_upload/customers/sensirion/Dokumente/9.5_CO2/Sensirion_CO2_Sensors_SCD30_Datasheet.pdf)
+![SCD30 pin-out diagram]()
 
 
 
