@@ -66,7 +66,7 @@ Run `sudo i2cdetect -l` again. You should now see two extra I2C buses in the lis
 This part will only work if the above has been done properly. Below are the SCD30's pin guide and the Raspi pin guide. For the breadboard, you only really need the power rails (+) and (-). 
 
 [SCD30 pin-out diagram specifications](https://www.sensirion.com/fileadmin/user_upload/customers/sensirion/Dokumente/9.5_CO2/Sensirion_CO2_Sensors_SCD30_Datasheet.pdf)
-![SCD30 pin-out diagram](https://raw.githubusercontent.com/After232/co2-sensors-setup/main/Images/SCD30-pinout-diagram.png)
+![SCD30 pin-out diagram](https://raw.githubusercontent.com/After232/co2-sensors-setup/main/Images/SCD30-pinout-diagram.png?token=AQJTUGMPVI6ENFGBSH4R733AWH72M)
 
 
 
