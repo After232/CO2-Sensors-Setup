@@ -65,7 +65,7 @@ Run `sudo i2cdetect -l` again. You should now see two extra I2C buses in the lis
 ## Connecting Sensors to Breadboard and Raspi
 This part will only work if the above has been done properly. Below are the SCD30's pin guide and the Raspi pin guide. For the breadboard, you only really need the power rails (+) and (-). 
 
-![SCD30 pin-out diagram](https://raw.githubusercontent.com/After232/co2-sensors-setup/main/Images/SCD30-pinout-diagram.png?token=AQJTUGMPVI6ENFGBSH4R733AWH72M)
+![SCD30 pin-out diagram](https://github.com/After232/co2-sensors-setup/blob/6d38d68f50b40f1db14479c7cd1ad5902f2c5f42/Images/SCD30-pinout-diagram.png)
 
 The pins that matter to us on the SCD30 are VDD, GND, SCL, SDA and SEL. The rest can be left unconnected. As we have three sensors, we can give each of them a label (such as Sensor A, Sensor B and Sensor C) to help differentiate between them.
 
