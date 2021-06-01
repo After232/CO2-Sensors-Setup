@@ -20,6 +20,7 @@ sudo apt-get install -y python-smbus
 sudo apt-get install -y i2c-tools
 python -m pip install pyserial
 python -m pip install scd30-i2c
+python -m pip install smbus2
 ```
 Restart the Raspi after all of this is done.
 
