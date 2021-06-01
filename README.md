@@ -6,8 +6,7 @@ This is a guide to installing multiple Sensirion SCD30 air sensors onto a fresh 
 * List of things to install via Terminal for setup
 * Configuring additional buses
 * Connecting Sensors to Breadboard and Raspi
-* VNC Server
-* Python code
+* Python program to collect data
 
 
 ## List of things to install via Terminal for setup
@@ -86,6 +85,30 @@ Make sure that the Raspi is **turned off** before any connections are made. This
 6. Connect Raspi pin 16 (GPIO 23) to SDA on Sensor C.
 7. Connect Raspi pin 18 (GPIO 24) to SCL on Sensor C.
 8. Connect Raspi pin 20 (ground) to SEL on Sensor C.
+
+Check that all the connections are correct. When you turn on your Raspi, open Terminal and enter `sudo i2cdetect -y 1`. This will check Sensor A's address, and you will see a grid of connections with most being labelled as `--`. The address that is not `--` is the address for the SCD30 sensor. Take note of this address for later.
+The format for reading addresses is `columnxrow`, which means that if your address is in the column 1 and row 60 (displaying as address 61), your address is `1x60`.
+
+**Troubleshooting**
+Occasionally, there may be a case where every single address shows up (the entire grid has numbers and no `--`). This usually means that one of your SDA pins is incorrectly connected. Check your pinout connections again and run `sudo i2cdetect -y #` again with # being the bus where all addresses are being displayed.
+
+In the event that *no* addresses are showing, check the sensor to see if it is periodically blinking. If the sensor is not blinking, there may be an issue with power. Check if your voltage and ground are connected correctly, and verify that nothing has short circuited. If the sensor is blinking and there are no visible addresses still, you may have either connected the pins wrongly or your SEL pin is not connected properly.
+
+## Python Program to Collect Data
+The final step is to use the program to collect data. Download the file `read-3-sensors.py` from this repository. Before running it, open the file in a text editor or IDE and change the address in line 10 (`address = 0x60`) to the one that is visible on your Raspi. Afterwards, save and exit the text editor/IDE.
+
+Open a terminal window when all three sensors are plugged in and blinking. Use command line tools such as `ls` and `cd` to navigate to the directory of the python program. Run `python read-3-sensors.py` to initiate the program. This will start compiling the data collected from the three sensors into three separate^ CSV files. The files will show the exact time (according to the Raspi's configuration), the CO2 content in ppm, the temperature in °C and the relative humidity in %.
+
+The program is made to run indefinitely until halted by user input. To end the program, click on the terminal window and press Control + C. This will finish exporting the CSV. 
+
+
+
+^The issue with compiling all three sensors' data in the same file is because, although they all record at 2 second intervals, their start times may be different, which can result in data becoming conflicted and outputting the wrong data to the wrong sensor's columns.
+
+
+
+
+
 
 
 
