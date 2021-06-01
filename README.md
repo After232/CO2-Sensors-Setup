@@ -100,16 +100,8 @@ The final step is to use the program to collect data. Download the file `read-3-
 
 Open a terminal window when all three sensors are plugged in and blinking. Use command line tools such as `ls` and `cd` to navigate to the directory of the python program. Run `python read-3-sensors.py` to initiate the program. This will start compiling the data collected from the three sensors into three separate^ CSV files. The files will show the exact time (according to the Raspi's configuration), the CO2 content in ppm, the temperature in °C and the relative humidity in %.
 
-The program is made to run indefinitely until halted by user input. To end the program, click on the terminal window and press Control + C. This will finish exporting the CSV. 
+The program is made to run indefinitely until halted by user input. To end the program, click on the terminal window and press Control + C. This will finish exporting the CSVs. 
 
 
 
 ^The issue with compiling all three sensors' data in the same file is because, although they all record at 2 second intervals, their start times may be different, which can result in data becoming conflicted and outputting the wrong data to the wrong sensor's columns.
-
-
-
-
-
-
-
-
