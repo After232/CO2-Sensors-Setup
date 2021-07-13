@@ -10,8 +10,8 @@ scd30C = SCD30(4)
 
 # Set measurement interval. Minimum is 2 seconds.
 measureTimeA = 2
-measureTimeB = 15
-measureTimeC = 15
+measureTimeB = 2
+measureTimeC = 2
 
 recordtime = datetime.datetime.now()
 
