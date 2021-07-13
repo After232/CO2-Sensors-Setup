@@ -79,7 +79,7 @@ Make sure that the Raspi is **turned off** before any connections are made. This
 5. Repeat steps 3-4 for Sensor B and Sensor C.
 6. Connect Raspi pin 3 (GPIO 2) to SDA on Sensor A.
 7. Connect Raspi pin 5 (GPIO 3) to SCL on Sensor A.
-8. Connect Raspi pin 6 (ground) to SEL on Sensor A.
+8. Connect Raspi pin 9 (ground) to SEL on Sensor A.
 6. Connect Raspi pin 11 (GPIO 17) to SDA on Sensor B.
 7. Connect Raspi pin 13 (GPIO 27) to SCL on Sensor B.
 8. Connect Raspi pin 14 (ground) to SEL on Sensor B.
@@ -96,7 +96,7 @@ Check that all the connections are correct. When you turn on your Raspi, open Te
 In the event that *no* addresses are showing, check the sensor to see if it is periodically blinking. If the sensor is not blinking, there may be an issue with power. Check if your voltage and ground are connected correctly, and verify that nothing has short circuited. If the sensor is blinking and there are no visible addresses still, you may have either connected the pins wrongly or your SEL pin is not connected properly.
 
 ## Python Program to Collect Data
-The final step is to use the program to collect data. Download the file `read-3-sensors.py` from this repository. Before running it, open the file in a text editor or IDE and change the address in line 10 (`address = 61`) to the one that is visible on your Raspi. Afterwards, save and exit the text editor/IDE.
+The final step is to use the program to collect data. Download the files from the repository.
 
 Open a terminal window when all three sensors are plugged in and blinking. Use command line tools such as `ls` and `cd` to navigate to the directory of the python program. Run `python read-3-sensors.py` to initiate the program. This will start compiling the data collected from the three sensors into three separate^ CSV files. The files will show the exact time (according to the Raspi's configuration), the CO2 content in ppm, the temperature in °C and the relative humidity in %.
 
