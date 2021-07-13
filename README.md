@@ -96,7 +96,7 @@ Check that all the connections are correct. When you turn on your Raspi, open Te
 In the event that *no* addresses are showing, check the sensor to see if it is periodically blinking. If the sensor is not blinking, there may be an issue with power. Check if your voltage and ground are connected correctly, and verify that nothing has short circuited. If the sensor is blinking and there are no visible addresses still, you may have either connected the pins wrongly or your SEL pin is not connected properly.
 
 ## Python Program to Collect Data
-The final step is to use the program to collect data. Download the files from the repository.
+The final step is to use the program to collect data. Download the files from the repository. The default measurement intervals for all three sensors is set to 2 seconds (the minimum possible time interval). This can be adjusted by editing lines 12, 13 and 14 of the program. The maximum possible measurement interval is 1800 (30 minutes), though that might be a bit much.
 
 Open a terminal window when all three sensors are plugged in and blinking. Use command line tools such as `ls` and `cd` to navigate to the directory of the python program. Run `python read-3-sensors.py` to initiate the program. This will start compiling the data collected from the three sensors into three separate^ CSV files. The files will show the exact time (according to the Raspi's configuration), the CO2 content in ppm, the temperature in °C and the relative humidity in %.
 
