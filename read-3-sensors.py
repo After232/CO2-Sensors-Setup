@@ -1,12 +1,12 @@
 import smbus2
 import time
 import datetime
-from scd30_i2cx import SCD30, SCD30B, SCD30C
+from scd30_i2cx import SCD30
 
 # Create object for each sensor
-scd30A = SCD30()
-scd30B = SCD30B()
-scd30C = SCD30C()
+scd30A = SCD30(1)
+scd30B = SCD30(3)
+scd30C = SCD30(4)
 
 # Set measurement interval. Minimum is 2 seconds.
 measureTimeA = 2
