@@ -16,13 +16,13 @@ measureTimeC = 2
 recordtime = datetime.datetime.now()
 
 # CSV File Creation
-fileNameA = ("CO2-sensor-A-readings-" + str(recordtime) + ".csv")
+fileNameA = (str(recordtime) + "-CO2-sensor-A-readings-" + ".csv")
 fileA = open(fileNameA, "a")
 print("Created CSV file for Sensor A")
-fileNameB = ("CO2-sensor-B-readings-" + str(recordtime) + ".csv")
+fileNameB = (str(recordtime) + "-CO2-sensor-B-readings-" + ".csv")
 fileB = open(fileNameB, "a")
 print("Created CSV file for Sensor B")
-fileNameC = ("CO2-sensor-C-readings-" + str(recordtime) + ".csv")
+fileNameC = (str(recordtime) + "-CO2-sensor-C-readings-" + ".csv")
 fileC = open(fileNameC, "a")
 print("Created CSV file for Sensor C")
 
