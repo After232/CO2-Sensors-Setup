@@ -1,22 +1,21 @@
-import smbus2
 import time
 import datetime
 from scd30_i2cx import SCD30
 
 # Create object for each sensor
 scd30A = SCD30(1)
-scd30B = SCD30(3)
+scd30B = SCD30(5)
 scd30C = SCD30(4)
 
 # Set measurement interval. Minimum is 2 seconds.
-measureTimeA = 2
-measureTimeB = 2
-measureTimeC = 2
+measureTimeA = 10
+measureTimeB = 10
+measureTimeC = 10
 
 recordtime = datetime.datetime.now()
 
 # CSV File Creation
-fileNameA = (str(recordtime) + "-CO2-sensor-A-readings-" + ".csv")
+fileNameA = (str(recordtime) + "-CO2-sensor-A-readings" + ".csv")
 fileA = open(fileNameA, "a")
 print("Created CSV file for Sensor A")
 fileNameB = (str(recordtime) + "-CO2-sensor-B-readings-" + ".csv")
@@ -74,7 +73,7 @@ while True:
         if scd30B.get_data_ready():        
             n = scd30B.read_measurement()
             if n is not None:
-                getDataB = (f"{m[0]:.2f}, {m[1]:.2f}, {m[2]:.2f}")
+                getDataB = (f"{n[0]:.2f}, {n[1]:.2f}, {n[2]:.2f}")
                 print("Line " + str(lineB) + " of Sensor B: writing...")
                 lineB += 1
             time.sleep(measureTimeB)
@@ -94,9 +93,9 @@ while True:
     else:
         timestampC = (str(datetime.datetime.now())[0:-7] + ",")
         if scd30C.get_data_ready():        
-            n = scd30C.read_measurement()
-            if n is not None:
-                getDataC = (f"{m[0]:.2f}, {m[1]:.2f}, {m[2]:.2f}")
+            p = scd30C.read_measurement()
+            if p is not None:
+                getDataC = (f"{p[0]:.2f}, {p[1]:.2f}, {p[2]:.2f}")
                 print("Line " + str(lineC) + " of Sensor C: writing...")
                 lineC += 1
             time.sleep(measureTimeC)
