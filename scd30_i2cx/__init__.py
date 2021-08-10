@@ -268,6 +268,18 @@ class SCD30:
             1 if ASC is active, 0 if inactive, or None upon error.
         """
         return self._word_or_none(self._send_command(0x5306))
+    
+    def forced_recalibration_reference(self, rangecali=400):
+        """Specifies the concentration of a reference source of CO2 placed in close proximity to the
+        sensor. The value must be from 400 to 2000 ppm.
+        Specifying a forced recalibration reference will override any calibration values
+        set by Automatic Self Calibration
+        """
+
+        if not 400 <= rangecali <= 2000:
+            raise ValueError("Interval must be in the range [400; 2000] (ppm)")
+
+        self._send_command(0x5204, 1, [rangecali])
 
     def get_temperature_offset(self):
         """Gets the currently active temperature offset.
