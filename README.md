@@ -100,6 +100,7 @@ Open a terminal window when all three sensors are plugged in and blinking. Use c
 
 The program is made to run indefinitely until halted by user input. To end the program, click on the terminal window and press Control + C. This will finish exporting the CSVs. 
 
-
-
 ^The issue with compiling all three sensors' data in the same file is because, although they all record at 2 second intervals, their start times may be different, which can result in data becoming conflicted and outputting the wrong data to the wrong sensor's columns.
+
+### Calibrating Sensors
+There are two additional programs included in this repository, one for automatic calibration and another for forced calibration. Forced calibration should preferably be used when there is a known level of CO2. Automatic calibration can be unreliable (especially if your sensors already have a significant error in calibration).
